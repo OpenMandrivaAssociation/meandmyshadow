@@ -1,10 +1,10 @@
-Name:		meandmyshadow
 Summary:	Me and My Shadow is a puzzle/platform game
-Version:	0.4
+Name:		meandmyshadow
+Version:	0.4.1
 Release:	1
-License:	GPLv3
+License:	GPLv3+
 Group:		Games/Arcade
-URL:		http://meandmyshadow.sourceforge.net
+Url:		http://meandmyshadow.sourceforge.net
 Source0:	https://sourceforge.net/projects/%{name}/files/%{version}/%{name}-%{version}-src.tar.gz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(gl)
@@ -16,26 +16,13 @@ BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_gfx)
 BuildRequires:	pkgconfig(SDL_image)
 BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	pkgconfig(SDL_ttf)
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	SDL_ttf-devel
 
 %description
 Me and My Shadow is a puzzle/platform game written by Luka Horvat.
 The author has given us permission to GPL the game, and develop it further.
 It has an interesting concept and rather unique gameplay.
-
-%prep
-%setup -q
-%__sed -i s,"Version=.*",,g %{name}.desktop
-%__sed -i s,"Categories=.*","Categories=Game;ArcadeGame;",g %{name}.desktop
-find . -type f -exec chmod 0644 '{}' \;
-
-%build
-%cmake
-%make
-
-%install
-%makeinstall_std -C build
 
 %files
 %doc README COPYING ChangeLog AUTHORS
@@ -44,4 +31,17 @@ find . -type f -exec chmod 0644 '{}' \;
 %{_datadir}/%{name}/*
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
+
+#----------------------------------------------------------------------------
+
+%prep
+%setup -q
+find . -type f -exec chmod 0644 '{}' \;
+
+%build
+%cmake
+%make
+
+%install
+%makeinstall_std -C build
 

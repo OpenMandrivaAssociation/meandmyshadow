@@ -1,7 +1,7 @@
 Summary:	Me and My Shadow is a puzzle/platform game
 Name:		meandmyshadow
 Version:	0.4.1
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Games/Arcade
 Url:		http://meandmyshadow.sourceforge.net

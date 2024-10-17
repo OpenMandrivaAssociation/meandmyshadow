@@ -4,7 +4,7 @@ Version:	0.4.1
 Release:	2
 License:	GPLv3+
 Group:		Games/Arcade
-Url:		http://meandmyshadow.sourceforge.net
+Url:		https://meandmyshadow.sourceforge.net
 Source0:	https://sourceforge.net/projects/%{name}/files/%{version}/%{name}-%{version}-src.tar.gz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(gl)
